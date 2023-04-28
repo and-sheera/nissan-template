@@ -1,0 +1,29 @@
+.slider {
+  position: relative;
+  @include media-custom(1655px) {
+    padding: 0 50px;
+  }
+  @include media-laptop {
+    padding: 0;
+  }
+  .swiper-slide {
+    transition: opacity 0.3s;
+    &:not(.swiper-slide-visible) {
+      opacity: 0;
+      @include media-tablet {
+        opacity: 1;
+      }
+    }
+  }
+  &__ui-swiper-buttons {
+    width: calc(100% + 130px);
+    margin: 0 -65px;
+    @include media-custom(1655px) {
+      width: 100%;
+      margin: 0;
+    }
+    @include media-laptop {
+      display: none;
+    }
+  }
+}

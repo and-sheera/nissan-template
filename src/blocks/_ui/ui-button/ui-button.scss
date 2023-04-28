@@ -1,0 +1,44 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 21px 25px;
+  text-align: start;
+  text-transform: uppercase;
+  font: 700 14px/1 $font;
+  color: #fff;
+  background: $red;
+  border: 0;
+  border-radius: 0;
+  transition: 0.3s;
+  cursor: pointer;
+  &::after {
+    content: '';
+    width: 6px;
+    height: 11px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='18' fill='none'%3E%3Cpath fill='%23C3002F' d='M.433.799C.144 1.105 0 1.479 0 1.92c0 .442.144.824.433 1.147l5.43 5.786-5.43 5.709A1.663 1.663 0 0 0 0 15.709c0 .442.149.82.446 1.134.297.314.658.471 1.083.471a1.38 1.38 0 0 0 1.07-.484L9.1 10c.306-.323.459-.706.459-1.147 0-.442-.153-.824-.459-1.147L2.599.799A1.38 1.38 0 0 0 1.53.314C1.104.314.74.476.433.8Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: contrast(0) brightness(100);
+    transition: 0.3s;
+  }
+  @include media-hover {
+    text-decoration: none;
+    background: $red-dark;
+  }
+  &--grey {
+    background: #eee;
+    color: $black;
+    &::after {
+      filter: contrast(0) brightness(0);
+    }
+    @include media-hover {
+      background: #eee;
+      color: $red;
+      &::after {
+        filter: none;
+      }
+    }
+  }
+}

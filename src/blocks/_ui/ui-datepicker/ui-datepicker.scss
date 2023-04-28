@@ -1,0 +1,195 @@
+.ui-datepicker {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $red;
+    transform: scaleY(0);
+    transition: 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 22px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Cpath fill='%23C3002F' d='M12.254 3c.206 0 .38.071.525.214a.69.69 0 0 1 .216.507v.721h1.502c.426 0 .783.14 1.07.42.289.279.433.62.433 1.023v8.673c0 .402-.144.744-.432 1.023-.288.28-.645.419-1.07.419H5.502c-.426 0-.783-.14-1.07-.419A1.37 1.37 0 0 1 4 14.558V5.885c0-.403.144-.744.432-1.024.288-.279.645-.419 1.07-.419h1.503v-.72a.69.69 0 0 1 .216-.508A.718.718 0 0 1 7.746 3c.206 0 .384.071.535.214.151.143.227.312.227.507v.721h2.984v-.72c0-.196.076-.365.227-.508A.752.752 0 0 1 12.254 3Zm2.243 6.49H5.503v5.068h8.994V9.49Zm-2.243 2.904v1.443H10.75v-1.443h1.503Zm-3.005 0v1.443H7.746v-1.443H9.25Zm0-2.163v1.442H7.746v-1.442H9.25Zm3.005 0v1.442H10.75v-1.442h1.503ZM7.005 5.885H5.503v2.163h8.994V5.885h-1.502v.72c0 .209-.072.38-.216.517a.736.736 0 0 1-.525.205.772.772 0 0 1-.535-.205.666.666 0 0 1-.227-.516v-.721H8.508v.72c0 .209-.076.38-.227.517a.772.772 0 0 1-.535.205.735.735 0 0 1-.525-.205.68.68 0 0 1-.216-.516v-.721Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  @include media-hover {
+    &::before {
+      transform: none;
+    }
+  }
+  &.filled {
+    &::before {
+      transform: none;
+    }
+    &::after {
+      opacity: 0;
+    }
+    input ~ label {
+      transform: translate3d(0, -140%, 0);
+      font-weight: 400;
+      font-size: 12px;
+    }
+    .ui-datepicker__clear {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 28px 65px 10px 16px;
+    font: 16px/1.5 $font;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-weight: 300;
+    font-size: 16px;
+    color: #aaa;
+    transition: 0.3s ease;
+    pointer-events: none;
+  }
+  &__clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 64px;
+    padding: 24px;
+    background: none;
+    color: $red;
+    border: 0;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  &--range {
+    .ui-input {
+      width: 235px;
+      @include media-tablet {
+        width: 200px;
+      }
+    }
+  }
+  &--time {
+  }
+}
+.flatpickr-calendar {
+  width: 260px;
+  font: 12px/1.25 $font;
+  color: $teal;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 4px 10px 16px rgba(169 164 181 / 0.2);
+  &::before,
+  &::after {
+    content: none;
+  }
+  .flatpickr-months {
+    position: relative;
+    height: 40px;
+    font-weight: 700;
+    font-size: 15px;
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .flatpickr-month {
+      height: 100%;
+      .flatpickr-current-month {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 15%;
+        height: 100%;
+        padding: 0;
+        font: inherit;
+        select {
+          padding: 0;
+          text-align-last: center;
+          appearance: none;
+          font: inherit;
+        }
+        .numInputWrapper {
+          input {
+            font: inherit;
+          }
+        }
+      }
+    }
+  }
+  .flatpickr-weekdays {
+    height: 30px;
+    .flatpickr-weekday {
+      font: 400 14px/1.5 $font;
+      color: #999;
+    }
+  }
+  .flatpickr-days {
+    width: 100%;
+    .dayContainer {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      .flatpickr-day {
+        max-width: 100%;
+        height: 30px;
+        font: 12px/32px $font;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        &:nth-last-child(-n+7) {
+          display: none;
+        }
+        &.endRange.startRange + .endRange:not(:nth-child(7n+1)),
+        &.selected.startRange + .endRange:not(:nth-child(7n+1)),
+        &.startRange.startRange + .endRange:not(:nth-child(7n+1)) {
+          box-shadow: none;
+        }
+        &.inRange {
+          background: $teal;
+          border-radius: 0;
+        }
+        &.today {
+          text-decoration: underline;
+          color: $teal;
+          border-color: transparent;
+        }
+        &.selected {
+          color: #fff;
+          background: $teal;
+        }
+        &.startRange {
+          border-radius: 6px 0 0 6px;
+        }
+        &.endRange {
+          background: $teal;
+          border-radius: 0 6px 6px 0;
+        }
+      }
+    }
+  }
+}

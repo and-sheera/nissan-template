@@ -1,0 +1,16 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'promotions'
+    const pageTitle = 'promotions'
+
+block content
+  main
+    +section
+      .inner
+        +section__head
+          +ui-h2('Акции сервиса')
+        +cards-grid
+          -for(let i=0; i<7; i++)
+            +info-card

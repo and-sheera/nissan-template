@@ -1,0 +1,59 @@
+.ui-checkbox {
+  position: relative;
+  input {
+    display: none;
+    &:checked + label {
+      &::before {
+        background: $red;
+        border-color: $red;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  label {
+    position: relative;
+    display: block;
+    width: fit-content;
+    padding-left: 35px;
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background: #fff;
+      border: 1px solid #ccc;
+      transition: 0.3s ease;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 7px;
+      width: 10px;
+      height: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 3.5L4.5 7L9 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+    a {
+      color: $red;
+    }
+  }
+  .parsley-errors-list  {
+    position: absolute;
+    top: calc(100% + 5px);
+    font-size: 10px;
+    color: $red;
+  }
+}

@@ -1,0 +1,19 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'services-inner'
+    const pageTitle = 'services-inner'
+
+block content
+  main
+    +section
+      +services-inner
+    +section('--bg')
+      .inner
+        +section__head
+          +ui-h2('Запись на ремонт подвески', '--light')
+        +form
+    +section
+      .inner
+        +models-list

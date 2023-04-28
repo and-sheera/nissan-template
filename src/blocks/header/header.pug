@@ -1,0 +1,73 @@
+header.header
+  .header__shadow
+  .inner
+    .header__primary
+      a.header__logo(href='/')
+        +svg('icon_logo')
+        +svg('icon_logo-text')
+        .header__name Мотор Ленд
+      .header__contacts
+        a.header__contact(href='https://maps.yandex.ru/?text=51.66182983370911,39.30038244833504' target='_blank')
+          +svg('icon_map')
+          span 394002, Воронеж, Изыскателей, 23/3
+        a.header__contact(href='tel:+74732112290')
+          +svg('icon_tel')
+          span +7 (473) 211-22-90
+      button.header__burger-icon
+        +svg('icon_burger')
+    .header__secondary
+      .header__burger
+        button.header__burger-close
+          +svg('icon_cross')
+        ul.header__menu
+          li.header__item
+            .header__button модельный ряд
+            .header__submenu
+              button.header__submenu-back Назад
+              .inner.header__inner
+                -for(let i=0; i<5; i++)
+                  a.header__model(href='#')
+                    .header__model-img: img(src='../../images/qashqai.jpg' alt='')
+                    .header__model-name qashqai
+          li.header__item
+            .header__button владельцам
+            .header__submenu
+              button.header__submenu-back Назад
+              .inner.header__inner
+                -for(let i=0; i<3; i++)
+                  .header__section
+                    a.header__section-name(href='#') Услуги и сервисы
+                    ul.header__section-list
+                      -for(let i=0; i<7; i++)
+                        li
+                          a.header__section-link(href='#') Ремонт фар Nissan
+                        li
+                          a.header__section-link(href='#') При прохождении ТО диагностика развала-схождения в подарок!
+          li.header__item
+            .header__button о компании
+            .header__submenu
+              button.header__submenu-back Назад
+              .inner.header__inner
+                -for(let i=0; i<4; i++)
+                  .header__section
+                    a.header__section-name(href='#') Статьи
+                    ul.header__section-list
+                      -for(let i=0; i<7; i++)
+                        li
+                          a.header__section-link(href='#') Технологические фишки ниссан
+                        li
+                          a.header__section-link(href='#') Реконструкция дилерского центра
+        .header__contacts
+          a.header__contact(href='https://maps.yandex.ru/?text=51.66182983370911,39.30038244833504' target='_blank')
+            +svg('icon_map')
+            span 394002, Воронеж, Изыскателей, 23/3
+          a.header__contact(href='tel:+74732112290')
+            +svg('icon_tel')
+            span +7 (473) 211-22-90
+          a.header__contact(href='mailto:Nissan@motorlandgroup.ru')
+            +svg('icon_mail')
+            span Nissan@motorlandgroup.ru
+          .header__contact
+            +svg('icon_clock')
+            span пн - вс: с 08:00 по 20:00
+      +ui-button('Написать в WhatsApp', 'header')(href='https://wa.me/message/ZMWHBTAJS6CWG1' target='_blank')

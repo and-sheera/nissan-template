@@ -1,0 +1,25 @@
+mixin promotion-inner(mods)
+  -
+    const baseName = 'promotion-inner'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .promotion-inner(class=allMods)&attributes(attributes)
+    .promotion-inner__cover: img(src='../../images/main-banner_1.png' alt='')
+    .promotion-inner__text
+      p
+        b Замена масла в CVT и АКПП с выгодой 15%*.
+        |  Nissan Мотор Ленд предлагает замену масла в CVT и AKПП по специальной цене. 
+      p
+        b Спешите, предложение ограничено!
+      p
+        b *Выгода 15%
+        | предоставляется за счет списывания бонусных баллов по программе лояльности «МОТОР ЛЕНД Бонус».
+      p Предложение действительно с 01.01.2023 по 31.03.2023 г.
+    block

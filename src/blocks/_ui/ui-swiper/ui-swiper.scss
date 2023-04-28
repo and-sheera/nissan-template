@@ -1,0 +1,138 @@
+.ui-swiper {
+  &-buttons {
+    display: flex;
+    gap: 10px;
+    .swiper-button {
+      &-prev,
+      &-next {
+        position: relative;
+        right: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        background: rgb(0 0 0 / 0.5);
+        border-radius: 50%;
+        transition: 0.3s;
+        &::after {
+          content: '';
+          width: 20%;
+          height: 30%;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='16' fill='none'%3E%3Cpath fill='%23fff' d='M1.372.75a1.391 1.391 0 0 0-.384.975c0 .373.128.698.384.975l4.54 4.987-4.54 4.955a1.301 1.301 0 0 0-.384.96c0 .383.128.713.384.99.255.277.56.416.91.416.352 0 .656-.139.912-.416l5.434-5.914c.256-.255.384-.58.384-.975 0-.394-.128-.719-.384-.975L3.194.75c-.256-.277-.56-.415-.911-.415-.352 0-.656.138-.911.415Z'/%3E%3C/svg%3E");
+          background-size: contain;
+          background-repeat: no-repeat;
+          opacity: 0.8;
+        }
+      }
+      &-prev {
+        &::after {
+          transform: scaleX(-1);
+          margin-right: 10%;
+        }
+      }
+    }
+    &--absolute {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 5;
+      transform: translateY(-50%);
+      width: 100%;
+      justify-content: space-between;
+      pointer-events: none;
+      .swiper-button {
+        &-prev,
+        &-next {
+          pointer-events: all;
+        }
+      }
+    }
+  }
+  &-pagination {
+    .swiper-pagination {
+      position: relative;
+      bottom: auto;
+      line-height: 0;
+      &-bullet {
+        width: 6px;
+        height: 6px;
+        transition: 0.3s;
+        &-active {
+          width: 18px;
+          border-radius: 3px;
+          background-color: teal;
+        }
+      }
+    }
+  }
+  &-bullets {
+    margin-top: 20px;
+    @include media-tablet {
+      margin-top: 15px;
+    }
+    .swiper-pagination {
+      position: relative;
+      bottom: 0;
+      font-size: 0;
+      &-horizontal {
+        .swiper-pagination-bullet {
+          margin: 0 4px;
+        }
+      }
+      &-bullet {
+        position: relative;
+        width: 8px;
+        height: 8px;
+        background: #ddd;
+        border-radius: 50%;
+        transition: 0.3s;
+        opacity: 1;
+        &-active {
+          background: $red;
+        }
+      }
+    }
+  }
+  &-fraction {
+    .swiper-pagination {
+      position: relative;
+      bottom: auto;
+      display: flex;
+      align-items: center;
+      &-current {
+        font: 22px/1.6 $font;
+        color: red;
+        @include media-tablet {
+          font-size: 18px;
+        }
+      }
+      &-progress {
+        position: relative;
+        width: 18px;
+        height: 1px;
+        margin: 0 7px;
+        background-color: #d1c9be;
+        &-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background-color: red;
+          transition-timing-function: linear;
+          &--active {
+            width: 100%;
+          }
+        }
+      }
+      &-total {
+        margin-top: 5px;
+        font: 300 16px/1.5 $font;
+        @include media-tablet {
+          margin-top: 3px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

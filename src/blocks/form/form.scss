@@ -1,0 +1,58 @@
+.form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 48px;
+  max-width: 740px;
+  margin: 0 auto;
+  &__section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  &__tel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    .ui-select {
+      position: static;
+      margin-right: -1px;
+      .ts-wrapper {
+        position: static;
+      }
+      .ts-control {
+        padding-top: 19px;
+        padding-left: 19px;
+        text-align: center;
+        .item {
+          padding-right: 18px;
+        }
+        &::after {
+          content: none;
+        }
+        &::before {
+          right: 20px;
+        }
+      }
+      .ts-dropdown {
+        .option {
+          display: flex;
+          justify-content: space-between;
+          gap: 15px;
+        }
+      }
+    }
+  }
+  &__submit {
+    text-align: center;
+  }
+  &__ui-button {
+    width: 100%;
+    max-width: 295px;
+    @include media-tablet {
+      max-width: unset;
+    }
+  }
+  .ui-p1 {
+    text-align: center;
+  }
+}

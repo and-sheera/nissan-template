@@ -1,0 +1,17 @@
+mixin slider(mods)
+  -
+    const baseName = 'slider'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .slider(class=allMods)&attributes(attributes)
+    +ui-swiper-buttons('slider, --absolute')
+    .slider__wrapper.swiper-wrapper
+      block
+    +ui-swiper-bullets('slider')

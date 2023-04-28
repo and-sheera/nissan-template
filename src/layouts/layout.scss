@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*:focus {
+  outline: none;
+}
+html {
+  box-sizing: border-box;
+  line-height: 1;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  &.lock-scroll {
+    position: relative;
+    overflow: hidden;
+    body {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+  @include media-hover {
+    text-decoration: underline;
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+span,
+ul,
+ol,
+li,
+tr,
+td,
+th,
+table,
+blockquote,
+figure {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+}
+input,
+textarea,
+button {
+  font: inherit;
+  appearance: none;
+}
+::selection {
+  background-color: $red-dark;
+  color: #fff;
+}
+
+// defaults
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: var(--header-height, 87px);
+  font-family: $font;
+  line-height: 1.3;
+  color: $black;
+  .inner {
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0 25px;
+    @include media-tablet {
+      padding: 0 16px;
+    }
+    &--max-w990 {
+      max-width: 990px;
+    }
+  }
+  main {
+    flex: 1 0;
+    padding: 0;
+  }
+  .img-16-9 {
+    position: relative;
+    padding-top: 56.25%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.swiper-wrapper {
+  box-sizing: inherit;
+}

@@ -1,0 +1,32 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'main'
+    const pageTitle = 'Main'
+
+block content
+  main
+    +main-ban
+    +section('--ov-h')
+      .inner
+        +section__head
+          +ui-h2('ПОПУЛЯРНЫЕ модели')
+        +slider
+          -for(let i=0; i<5; i++)
+            +info-card.swiper-slide
+    +section
+      .inner
+        +about
+    +section('--ov-h')
+      .inner
+        +section__head
+          +ui-h2('Акции сервиса')
+        +slider
+          -for(let i=0; i<5; i++)
+            +info-card.swiper-slide
+    +section('--bg')
+      .inner
+        +section__head
+          +ui-h2('Запись на сервис', '--light')
+        +form

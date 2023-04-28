@@ -1,0 +1,109 @@
+.ui-input {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $red;
+    transform: scaleY(0);
+    transition: 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  @include media-hover {
+    &::before {
+      transform: none;
+    }
+  }
+  &.filled {
+    &::before {
+      transform: none;
+    }
+    input ~ label {
+      transform: translate3d(0, -140%, 0);
+      font-weight: 400;
+      font-size: 12px;
+    }
+    .ui-input__clear {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &.parsley-error {
+    &::before {
+      transform: none;
+    }
+    label {
+      color: $red;
+    }
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    padding: 28px 65px 10px 16px;
+    font: 16px/1.5 $font;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    outline: none;
+    &:focus ~ label {
+      transform: translate3d(0, -140%, 0);
+      font-size: 12px;
+    }
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-weight: 300;
+    font-size: 16px;
+    color: #aaa;
+    transition: 0.3s ease;
+    pointer-events: none;
+  }
+  &__clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 64px;
+    padding: 24px;
+    background: none;
+    color: $red;
+    border: 0;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  .parsley-errors-list  {
+    position: absolute;
+    top: calc(100% + 5px);
+    font-size: 10px;
+    color: $red;
+  }
+  &--time {
+    &.filled {
+      &::after {
+        opacity: 0;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none'%3E%3Cpath fill='%23C3002F' d='M10.01 3.5c-1.183 0-2.28.292-3.294.877a6.719 6.719 0 0 0-2.339 2.339A6.46 6.46 0 0 0 3.5 10c0 1.176.292 2.27.877 3.284a6.719 6.719 0 0 0 2.339 2.339A6.461 6.461 0 0 0 10 16.5c1.176 0 2.27-.292 3.284-.877a6.718 6.718 0 0 0 2.339-2.339A6.479 6.479 0 0 0 16.5 9.99c0-.857-.166-1.686-.497-2.485-.331-.799-.8-1.5-1.403-2.105a6.428 6.428 0 0 0-2.105-1.403A6.427 6.427 0 0 0 10.01 3.5Zm0 11.694c-.949 0-1.823-.23-2.622-.692a5.076 5.076 0 0 1-1.89-1.89A5.133 5.133 0 0 1 4.806 10c0-.942.23-1.813.692-2.612a5.077 5.077 0 0 1 1.89-1.89c.8-.462 1.67-.692 2.612-.692.942 0 1.813.23 2.612.692.799.461 1.429 1.091 1.89 1.89.461.8.692 1.673.692 2.622 0 .688-.13 1.351-.39 1.988a5.07 5.07 0 0 1-1.12 1.686 5.07 5.07 0 0 1-1.686 1.12 5.26 5.26 0 0 1-2.008.39h.02Zm0-9.102a.638.638 0 0 0-.468.195.638.638 0 0 0-.195.468v2.592H8.041a.616.616 0 0 0-.448.195.627.627 0 0 0-.195.458c0 .175.065.328.195.458s.28.195.448.195h1.969a.616.616 0 0 0 .448-.195c.13-.13.195-.28.195-.448V6.755a.638.638 0 0 0-.195-.468.616.616 0 0 0-.448-.195Z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+  }
+}

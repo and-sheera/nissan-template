@@ -1,0 +1,52 @@
+-
+  const footerMenu = [
+    { title: 'Модельный ряд',
+      list: [
+      { name: 'НОВЫЙ NISSAN PATHFINDER' },
+      { name: 'X-TRAIL' },
+      { name: 'QASHQAI' },
+      { name: 'MURANO' },
+      { name: 'TERRANO' }
+    ]},
+    { title: 'Владельцам',
+      list: [
+      { name: 'Акции Сервиса' },
+      { name: 'Услуги и сервисы' },
+      { name: 'Специальные программы' }
+    ]},
+    { title: 'О компании',
+      list: [
+      { name: 'СТАТЬИ' },
+      { name: 'СОТРУДНИКИ' },
+      { name: 'Новости дилера' },
+      { name: 'Контакты' }
+    ]}
+  ]
+
+footer.footer
+  .footer__top
+    .inner
+      +breadcrumbs('footer')
+        +breadcrumbs-item('Главная страница', '/')
+        +breadcrumbs-item('Владельцам', '#')
+        +breadcrumbs-item('Акции сервиса')
+  .footer__main
+    .inner
+      .footer__menu
+        each footerMenuItem in footerMenu
+          .footer__section
+            a.footer__section-name(href='#') !{footerMenuItem.title}
+            ul.footer__list
+              each footerMenuItemName, index in footerMenuItem.list
+                li.footer__item
+                  a.footer__link(href='#') !{footerMenuItemName.name}
+      .footer__request
+        +ui-button('Позвоните мне', 'footer')(href='#')
+        +ui-button('Запись на сервис', 'footer, --grey')(href='#')
+  .footer__bottom
+    .inner
+      .footer__rights Cайт не является публичной офертой.<br>Все содержащиеся на Сайте сведения носят исключительно информационный характер и не является исчерпывающими.<br>Все условия приобретения автомобилей, цены, спецпредложения и комплектации автомобилей указаны с целью ознакомления. Комплектации и цены могут быть изменены без предварительного оповещения.<br><br>¹ Рекомендованная розничная цена с учетом специального предложения<br>
+      .footer__copyrights
+        p © 2023, все права защищены
+        p
+          a(href='#') Cделано в UDP Auto

@@ -1,0 +1,47 @@
+mixin main-ban(mods)
+  -
+    const baseName = 'main-ban'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .main-ban(class=allMods)&attributes(attributes)
+    +ui-swiper-bullets('main-ban')
+    +ui-swiper-buttons('main-ban, --absolute')
+    .main-ban__wrapper.swiper-wrapper
+      if pageName === 'services'
+        .main-ban__item.main-ban__item--text-up.swiper-slide
+          .main-ban__img: img(src='../../images/main-banner_3.jpg' alt='')
+          .main-ban__text
+            .inner.main-ban__inner
+              .main-ban__text-bg
+                .main-ban__descr.main-ban__descr--fw300 Обещания NISSAN
+                h2.main-ban__title.main-ban__title--fw300 Мы ОБЕЩАЕМ ЗАБОТИТЬСЯ О ВАС. ВСЕГДА.
+      else
+        .main-ban__item.swiper-slide
+          .main-ban__img: img(src='../../images/main-banner_2.jpg' alt='')
+        .main-ban__item.swiper-slide
+          .main-ban__img: img(src='../../images/main-banner_3.jpg' alt='')
+          .main-ban__text.main-ban__text--center
+            .inner.main-ban__inner
+              h2.main-ban__title.main-ban__title--fw300 Добро пожаловать в мир автомобилей Nissan!
+        .main-ban__item.swiper-slide
+          .main-ban__img: img(src='../../images/main-banner_1.png' alt='')
+          .main-ban__text
+            .inner.main-ban__inner
+              h2.main-ban__title.main-ban__title--fw300 Новый NISSAN PATHFINDER
+              .main-ban__descr.main-ban__descr--fw300 Сила. ИНТЕЛЛЕКТ. Контроль
+              +ui-button('Узнать больше', 'main-ban')(href='#')
+        .main-ban__item.swiper-slide
+          .main-ban__img: img(src='../../images/main-banner_4.png' alt='')
+          .main-ban__text.main-ban__text--white
+            .inner.main-ban__inner
+              h2.main-ban__title NISSAN X-TRAIL
+              .main-ban__descr ВОПЛОЩАЙТЕ мечты ВМЕСТЕ
+              +ui-button('Узнать больше', 'main-ban')(href='#')
+    block

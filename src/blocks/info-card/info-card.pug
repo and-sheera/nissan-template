@@ -1,0 +1,25 @@
+-
+  const defaultData = {
+    img: '../../images/qashqai.jpg',
+    title: 'Замена масле за 1 рубль*',
+    descr: 'Приключения отражаются в характере',
+  }
+
+mixin info-card(data = defaultData, mods)
+  -
+    const baseName = 'info-card'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  a.info-card(class=allMods href='#')&attributes(attributes)
+    .info-card__img.img-16-9: img(src=data.img alt='')
+    .info-card__title !{data.title}
+    .info-card__descr !{data.descr}
+    +ui-button('Узнать больше', 'info-card')
+    block

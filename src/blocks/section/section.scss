@@ -1,0 +1,21 @@
+.section {
+  padding: 55px 0;
+  @include media-tablet {
+    padding: 40px 0;
+  }
+  &--ov-h {
+    overflow: hidden;
+  }
+  &--bg {
+    background: #f8f8f8;
+  }
+  &__head {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+      @include media-tablet {
+        margin-bottom: 35px;
+      }
+    }
+  }
+}

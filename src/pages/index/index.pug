@@ -1,0 +1,28 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageTitle = 'Index'
+
+block content
+  main
+    .inner
+      +ui-h1(pageTitle)
+      br
+      br
+      a(href='blocks.html') Repository blocks
+      br
+      a(href='main.html') Main
+      br
+      a(href='promotions.html') Акции
+      br
+      a(href='promotions-inner.html') Акции - детальная
+      br
+      a(href='services.html') Услуги и сервисы
+      br
+      a(href='services-inner.html') Услуги и сервисы - детальная
+      br
+      a(href='customer-promise.html') Обещания Nissan
+      br
+      a(href='service-maintenance.html') Сервисные пакеты NISSAN
+

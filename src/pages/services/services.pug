@@ -1,0 +1,29 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'services'
+    const pageTitle = 'services'
+
+block content
+  main
+    +section
+      .inner
+        +section__head
+          +ui-h2('Услуги и сервисы')
+    +main-ban
+    +section
+      .inner
+        +about
+    +section('--bg, --ov-h')
+      .inner
+        +section__head
+          +ui-h2('Услуги и акции сервиса')
+        +slider('--3slides')
+          -for(let i=0; i<5; i++)
+            +info-card.swiper-slide
+    +section('--bg')
+      .inner
+        +section__head
+          +ui-h2('Запись на сервис', '--light')
+        +form
