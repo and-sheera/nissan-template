@@ -1,0 +1,16 @@
+.feature {
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+  height: auto;
+  @include media-tablet {
+    padding: 0 15px;
+  }
+  &__name {
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
+  &__descr {
+    margin-top: 25px;
+  }
+}

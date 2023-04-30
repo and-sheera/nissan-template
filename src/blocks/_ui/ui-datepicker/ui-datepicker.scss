@@ -92,13 +92,11 @@
       }
     }
   }
-  &--time {
-  }
 }
 .flatpickr-calendar {
   width: 260px;
   font: 12px/1.25 $font;
-  color: $teal;
+  color: $red;
   border: 0;
   border-radius: 0;
   box-shadow: 4px 10px 16px rgba(169 164 181 / 0.2);
@@ -170,23 +168,23 @@
           box-shadow: none;
         }
         &.inRange {
-          background: $teal;
+          background: $red;
           border-radius: 0;
         }
         &.today {
           text-decoration: underline;
-          color: $teal;
+          color: $red;
           border-color: transparent;
         }
         &.selected {
           color: #fff;
-          background: $teal;
+          background: $red;
         }
         &.startRange {
           border-radius: 6px 0 0 6px;
         }
         &.endRange {
-          background: $teal;
+          background: $red;
           border-radius: 0 6px 6px 0;
         }
       }

@@ -1,6 +1,6 @@
-mixin ui-ul(listItems, mods)
+mixin form-success(mods)
   -
-    const baseName = 'ui-ul'
+    const baseName = 'form-success'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,7 +10,7 @@ mixin ui-ul(listItems, mods)
       allMods = allMods.trim()
     }
 
-  ul.ui-ul(class=allMods)&attributes(attributes)
-    each item in listItems
-      li !{item}
+  .form-success(class=allMods)&attributes(attributes)
+    .form-success__icon: +svg('icon_check')
+    .form-success__title Заявка успешно отправлена
     block

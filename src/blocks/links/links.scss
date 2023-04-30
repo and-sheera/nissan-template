@@ -1,0 +1,27 @@
+.links {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 50px;
+  @include media-laptop {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+  }
+  @include media-tablet {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  &--flex-center {
+    display: flex;
+    justify-content: center;
+    @include media-tablet {
+      flex-direction: column;
+    }
+    .ui-button {
+      min-width: 295px;
+      @include media-tablet {
+        min-width: auto;
+      }
+    }
+  }
+}

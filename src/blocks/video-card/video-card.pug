@@ -1,0 +1,17 @@
+mixin video-card(mods)
+  -
+    const baseName = 'video-card'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .video-card(class=allMods)&attributes(attributes)
+    a.video-card__link.img-16-9(href='#video-popup' data-popup-open)
+      img(src='../../images/main-banner_2.jpg' alt='')
+    .video-card__descr Правила Nissan. Помощь и круглосуточный сервис с выездом на дорогу по программе “Обещания Nissan"
+    block

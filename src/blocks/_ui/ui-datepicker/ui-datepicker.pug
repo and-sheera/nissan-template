@@ -11,8 +11,8 @@ mixin ui-datepicker(text, mods)
     }
     let randomId = Math.random().toString(36).replace(/[^\da-z]+/g, '').slice(0, 6)
 
-  .ui-datepicker(class=allMods)&attributes(attributes)
-    input(id=randomId readonly)
+  .ui-datepicker(class=allMods)
+    input(id=randomId readonly)&attributes(attributes)
     label(for=randomId) !{text}
     button.ui-datepicker__clear(type='button')
       +svg('icon_cross')

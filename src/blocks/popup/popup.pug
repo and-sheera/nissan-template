@@ -1,6 +1,6 @@
-mixin ui-ul(listItems, mods)
+mixin popup(mods)
   -
-    const baseName = 'ui-ul'
+    const baseName = 'popup'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,7 +10,8 @@ mixin ui-ul(listItems, mods)
       allMods = allMods.trim()
     }
 
-  ul.ui-ul(class=allMods)&attributes(attributes)
-    each item in listItems
-      li !{item}
-    block
+  .popup(class=allMods)&attributes(attributes)
+    .popup__content
+      button.popup__close(type='button')
+        +svg('icon_cross')
+      block

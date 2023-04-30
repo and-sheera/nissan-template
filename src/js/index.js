@@ -13,6 +13,9 @@ import slider from '../blocks/slider/slider'
 import header from '../blocks/header/header'
 import mainBan from '../blocks/main-ban/main-ban'
 import form from '../blocks/form/form'
+import video from '../blocks/video/video'
+import popup from '../blocks/popup/popup'
+import accordions from '../blocks/accordions/accordions'
 
 document.addEventListener('DOMContentLoaded', function () {
   uiDatepicker()
@@ -26,8 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // tabs()
   window.isMobile = () => window.matchMedia('(max-width: 767px)').matches
 
+  accordions()
   header()
   mainBan()
   slider()
   form()
+  video()
+  popup()
 })

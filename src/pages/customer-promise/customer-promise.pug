@@ -7,5 +7,57 @@ block variables
 
 block content
   main
-    .inner
-      +ui-h1(pageTitle)
+    +section
+      .inner
+        +about
+          .about__section.about__section--head
+            +ui-h1('Общания Nissan')
+            +ui-p1('Наслаждайтесь комфортом, качеством, технологиями и динамикой своего Nissan! Если вам нужна помощь, вы можете положиться на нас: удобные и выгодные финансовые программы, услуги по обслуживанию автомобиля и многое другое — мы всегда рядом!', '--light')
+    +section
+      .inner
+        +video
+          video(src='https://cdn.kodixauto.ru/media/5f0ed113b1a8ee0001642e9c' playsinline controls data-poster='https://cdn.kodixauto.ru/media/image/5f0ed2a6b1a8ee0001642ea6')
+    +section
+      .inner
+        +promises
+    +section('--ov-h')
+      .inner
+        +slider
+          -for(let i=0; i<5; i++)
+            +video-card.swiper-slide
+    +section
+      .inner
+        +about
+          .about__section.about__section--head
+            +ui-h2('ПОСЛЕПРОДАЖНОЕ ОБСЛУЖИВАНИЕ')
+            +ui-p1('Безмятежное спокойствие и безопасность владельцев автомобилей Nissan являются основными приоритетами компании. Мы предлагаем широкий выбор услуг, чтобы Вы чувствовали себя комфортно и уверенно в любой ситуации.', '--light')
+    +section
+      .inner
+        +links
+          +ui-button('Свяжитесь с нами')(href='#')
+        br
+        br
+        +links
+          +ui-button('Техническое обслуживание')(href='#')
+          +ui-button('Специальные программы')(href='#')
+          +ui-button('Nissan страхование')(href='#')
+    +section
+      .inner
+        +footnote
+          sup 1
+          | Подробные условия уточняйте в дилерском центре Ниссан;
+          br
+          sup 2
+          |  Стоимость, указанная на сайте, является ориентировочной. Итоговая стоимость ТО и все цены на запасные части, указанные в калькуляторе ТО, носят информационный характер, являются рекомендованными розничными ценами ООО «Ниссан Мэнуфэкчуринг РУС» и могут отличаться от действительных цен уполномоченных дилеров Nissan;
+          br
+          sup 4
+          |  Действителен для звонков на территории РФ;
+          br
+          sup 5
+          |  При сдаче автомобиля для проведения ремонтных работ в дилерский центр;
+          br
+          sup 6
+          |  Подробные условия Программы указаны на сайте www.nissan.ru на страницах "В кругу Nissan" и "YOU+Nissan".
+  +popup('--video')#video-popup
+    +video
+      video(src='https://cdn.kodixauto.ru/media/5f0ed113b1a8ee0001642e9c' playsinline controls data-poster='https://cdn.kodixauto.ru/media/image/5f0ed2a6b1a8ee0001642ea6')

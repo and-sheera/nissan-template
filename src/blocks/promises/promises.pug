@@ -1,0 +1,48 @@
+mixin promises(mods)
+  -
+    const baseName = 'promises'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    const data = [
+      {
+        img: '../../images/promises_1.jpg',
+        name: 'ПОДМЕННЫЙ автомобиль',
+        descr: 'Бесплатный подменный автомобиль при длительном гарантийном ремонте (более 4х часов)'
+      },
+      {
+        img: '../../images/promises_2.jpg',
+        name: 'ОСМОТР автомобиля',
+        descr: 'В Вашем присутствии комплексная проверка и рекомендации по обслуживанию автомобиля.'
+      },
+      {
+        img: '../../images/promises_3.jpg',
+        name: 'УДОБНЫЕ ОНЛАЙН-СЕРВИСЫ',
+        descr: 'Cтоимость ТО у дилера и действующие акции для Вашего автомобиля онлайн. Онлайн-запись на обслуживание в дилерском центре в удобное для Вас время.'
+      },
+      {
+        img: '../../images/promises_4.jpg',
+        name: 'ОСОБЫЕ УСЛОВИЯ ПО ГАРАНТИИ',
+        descr: 'Гарантия 3 года или 100 000 км пробега на узлы и агрегаты, в том числе на элементы подвески, АКБ, хром, ксеноновые лампы.'
+      },
+      {
+        img: '../../images/promises_5.jpg',
+        name: 'ПОДДЕРЖКА 24/7',
+        descr: 'Ответ на любой вопрос по телефону <a href="tel:88002005990"><b>8 800 200 59 90</b></a> или в официальном чат-боте <b>@ExpertNissanBot</b> в мессенджерах.'
+      },
+    ]
+
+  .promises(class=allMods)&attributes(attributes)
+    each item in data
+      .promises__item
+        .promises__img.img-16-9: img(src=item.img alt='')
+        .promises__name !{item.name}
+        .promises__descr !{item.descr}
+        +ui-button('Узнать больше', 'promises, --text')(href='#')
+    block

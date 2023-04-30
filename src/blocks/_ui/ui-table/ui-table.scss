@@ -1,0 +1,20 @@
+.ui-table {
+  overflow-x: auto;
+  table {
+    min-width: 768px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: 300;
+    font-size: 16px;
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid;
+    }
+    th {
+      font-weight: 700;
+      background-color: #ccc;
+    }
+  }
+}

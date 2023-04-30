@@ -1,0 +1,10 @@
+.video {
+  --plyr-color-main: #{$red};
+
+  position: relative;
+  .plyr {
+    &__poster {
+      background-size: cover;
+    }
+  }
+}

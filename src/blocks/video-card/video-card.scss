@@ -1,0 +1,35 @@
+.video-card {
+  position: relative;
+  height: auto;
+  padding: 16px;
+  border: 1px solid #eee;
+  &__link {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%,-50%);
+      width: 40px;
+      height: 40px;
+      background: $red;
+      border-radius: 50%;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 0;
+      height: 0;
+      transform: translate(-3px, -50%);
+      border: 7px solid transparent;
+      border-left-color: #fff;
+    }
+  }
+}

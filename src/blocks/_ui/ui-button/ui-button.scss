@@ -6,7 +6,7 @@
   padding: 21px 25px;
   text-align: start;
   text-transform: uppercase;
-  font: 700 14px/1 $font;
+  font: 700 14px/1.2 $font;
   color: #fff;
   background: $red;
   border: 0;
@@ -26,6 +26,21 @@
   @include media-hover {
     text-decoration: none;
     background: $red-dark;
+  }
+  &--text {
+    padding: 0;
+    background: none;
+    color: $red;
+    &::after {
+      filter: none;
+    }
+    @include media-hover {
+      background: none;
+      color: $red-dark;
+      &::after {
+        filter: brightness(0.6);
+      }
+    }
   }
   &--grey {
     background: #eee;

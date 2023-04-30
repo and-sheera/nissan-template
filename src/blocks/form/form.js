@@ -19,18 +19,20 @@ export default function form() {
     })
   }
 
-  $('.form').parsley({
-    trigger: 'blur',
-    errorsContainer: function (field) {
-      return $(field.element).parent()
-    }
-  })
-    .on('field:error', function (field) {
-      field.element.parentElement.classList.add('parsley-error')
+  if (document.querySelector('.form')) {
+    $('.form').parsley({
+      trigger: 'blur',
+      errorsContainer: function (field) {
+        return $(field.element).parent()
+      }
     })
-    .on('field:success', function (field) {
-      field.element.parentElement.classList.remove('parsley-error')
-    })
+      .on('field:error', function (field) {
+        field.element.parentElement.classList.add('parsley-error')
+      })
+      .on('field:success', function (field) {
+        field.element.parentElement.classList.remove('parsley-error')
+      })
+  }
 }
 
 function getTelInputSetting(code) {

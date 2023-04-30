@@ -10,7 +10,6 @@ html {
   box-sizing: border-box;
   line-height: 1;
   scroll-behavior: smooth;
-  scrollbar-gutter: stable;
   &.lock-scroll {
     position: relative;
     overflow: hidden;

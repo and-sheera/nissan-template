@@ -1,6 +1,6 @@
-mixin ui-ul(listItems, mods)
+mixin accordions(mods)
   -
-    const baseName = 'ui-ul'
+    const baseName = 'accordions'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,7 +10,11 @@ mixin ui-ul(listItems, mods)
       allMods = allMods.trim()
     }
 
-  ul.ui-ul(class=allMods)&attributes(attributes)
-    each item in listItems
-      li !{item}
+  .accordions(class=allMods)&attributes(attributes)
     block
+
+mixin accordions__item(name)
+  .accordions__item&attributes(attributes)
+    .accordions__head !{name}
+    .accordions__body
+      block

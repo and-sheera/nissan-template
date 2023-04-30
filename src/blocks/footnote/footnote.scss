@@ -1,0 +1,12 @@
+.footnote {
+  font-weight: 300;
+  font-size: 12px;
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+  p {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}

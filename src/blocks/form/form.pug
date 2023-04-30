@@ -16,7 +16,7 @@ mixin form(mods)
       +ui-select('', 'Ремонт', 'Техническое обслуживание', 'Кузовной ремонт', 'Другое')(placeholder='Причина обращения')
     .form__section
       +ui-p1('Дата и время визита', '--light')
-      +ui-datepicker('Выберите дату', '--single')
+      +ui-datepicker('Выберите дату', '--single')(data-min-date='today')
       +ui-input('time', 'Введите время', '--time')(data-mask='time')
     .form__section
       +ui-p1('Личные данные', '--light')

@@ -1,0 +1,41 @@
+mixin features(mods)
+  -
+    const baseName = 'features'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    const data = [
+      {
+        img: '../../images/feature-1.jpg',
+        name: 'Реальная выгода',
+        descr: 'До 30% выгоды к текущим ценам на ТО.'
+      },
+      {
+        img: '../../images/feature-2.jpg',
+        name: 'СПОКОЙСТВИЕ В ПУТИ',
+        descr: 'Программа помощи на дорогах Nissan Assistance в течение всего срока действия Сервисного контракта.'
+      },
+      {
+        img: '../../images/feature-3.jpg',
+        name: 'РАЗУМНОЕ ПЛАНИРОВАНИЕ',
+        descr: 'В ближайшие годы в вашем бюджете не будет статьи расходов на ТО.'
+      },
+      {
+        img: '../../images/feature-4.jpg',
+        name: 'ГАРАНТИЯ МОБИЛЬНОСТИ',
+        descr: 'Вы можете пройти ТО у любого участвующего в программе дилера Nissan в России.'
+      },
+    ]
+
+  each item in data
+    .feature(class=allMods)&attributes(attributes)
+      .feature__icon.img-16-9: img(src=item.img alt='')
+      .feature__name !{item.name}
+      .feature__descr !{item.descr}
+    block
