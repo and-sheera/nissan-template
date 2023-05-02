@@ -1,14 +1,14 @@
 export default function uiTextarea() {
-  const textareas = document.querySelectorAll('.ui-textarea')
-  if (textareas) {
-    for (const textarea of textareas) {
-      const counter = textarea.querySelector('.ui-textarea__counter')
-      const maxLength = textarea.querySelector('textarea').getAttribute('maxlength')
-      counter.textContent = maxLength
-
-      textarea.addEventListener('input', function (event) {
-        const length = event.target.value.length
-        counter.textContent = maxLength - length
+  const uiTextareas = document.querySelectorAll('.ui-textarea')
+  if (uiTextareas) {
+    for (const element of uiTextareas) {
+      const textarea = element.querySelector('textarea')
+      textarea.value === '' ? element.classList.remove('filled') : element.classList.add('filled')
+      textarea.addEventListener('input', function () {
+        textarea.value === '' ? element.classList.remove('filled') : element.classList.add('filled')
+      })
+      textarea.addEventListener('blur', function () {
+        textarea.value === '' ? element.classList.remove('filled') : element.classList.add('filled')
       })
     }
   }

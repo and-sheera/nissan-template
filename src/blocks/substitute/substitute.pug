@@ -1,6 +1,6 @@
-mixin ui-p1(text, mods)
+mixin substitute(data, mods)
   -
-    const baseName = 'ui-p1'
+    const baseName = 'substitute'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,9 @@ mixin ui-p1(text, mods)
       allMods = allMods.trim()
     }
 
-  .ui-p1(class=allMods)&attributes(attributes) !{text}
+  .substitute(class=allMods)&attributes(attributes)
+    each item in data
+      .substitute__item
+        .substitute__img.img-16-9: img(src=item.img alt='')
+        .substitute__name !{item.name}
     block

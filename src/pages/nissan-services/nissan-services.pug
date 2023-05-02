@@ -1,0 +1,25 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'nissan-services'
+    const pageTitle = 'nissan-services'
+
+block content
+  main
+    +main-ban
+    +section
+      .inner
+        +section__head
+          +ui-h1('ВЫГОДНЫЕ СЕРВИСНЫЕ ПРЕДЛОЖЕНИЯ')
+        +ui-p1('Высокие стандарты обслуживания – один из приоритетов нашей компании. Именно поэтому в дилерских центрах Nissan мы стараемся организовать все для Вашего удобства, чтобы Вы были полностью уверены в правильности принятого решения. Вы можете не сомневаться в завтрашнем дне и в безупречной работе своего автомобиля, доверив его обслуживание нашим официальным дилерам.', '--light')
+    +section('--ov-h')
+      .inner
+        +slider('--3slides')
+          -for(let i=0; i<5; i++)
+            +info-card.swiper-slide
+    +section('--bg')
+      .inner
+        +section__head
+          +ui-h3('ХОТИТЕ УЗНАТЬ БОЛЬШЕ?', '--light')
+        +benefits

@@ -1,6 +1,6 @@
-mixin ui-p1(text, mods)
+mixin benefits(mods)
   -
-    const baseName = 'ui-p1'
+    const baseName = 'benefits'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,8 @@ mixin ui-p1(text, mods)
       allMods = allMods.trim()
     }
 
-  .ui-p1(class=allMods)&attributes(attributes) !{text}
+  .benefits(class=allMods)&attributes(attributes)
+    a.benefits__item(href='#')
+      .benefits__icon: img(src='../../images/benefits_1.svg' alt='')
+      .benefits__name Запись на сервис
     block

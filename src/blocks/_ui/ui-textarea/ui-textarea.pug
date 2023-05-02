@@ -1,4 +1,4 @@
-mixin ui-textarea(mods)
+mixin ui-textarea(id, text, mods)
   -
     const baseName = 'ui-textarea'
     let allMods = ''
@@ -11,5 +11,6 @@ mixin ui-textarea(mods)
     }
 
   .ui-textarea(class=allMods)
-    textarea&attributes(attributes)
-    .ui-textarea__counter
+    textarea(id=id name=id)&attributes(attributes)
+    if text
+      label(for=id) !{text}

@@ -1,0 +1,44 @@
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  @include media-tablet {
+    grid-template-columns: unset;
+  }
+  &__item {
+    padding: 32px 20px;
+    color: #fff;
+    background: #999;
+    text-align: center;
+    @include media-hover {
+      background: #777;
+      text-decoration: none;
+    }
+    @include media-tablet {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 5px;
+    @include media-tablet {
+      width: 65px;
+      height: 65px;
+      margin: 0;
+      flex-shrink: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__name {
+    font-weight: 300;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}

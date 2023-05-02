@@ -1,0 +1,19 @@
+extends ../../layouts/layout
+
+block variables
+  -
+    const pageName = 'reconstruction'
+    const pageTitle = 'reconstruction'
+
+block content
+  main
+    +section
+      .inner
+        +section__head
+          +ui-h1('Реконструкция дилерского центра', '--light')
+        +ui-p1('Уважаемые клиенты, мы рады вам сообщить, что реконструкция нашего дилерского центра завершена, теперь он стал для вас еще более комфортным и современным! Приглашаем вас в Мотор Ленд на тест-драйв автомобилей Nissan и на сервисное обслуживание. С нетерпением ждем встречи! ', '--light')
+    +section('--ov-h')
+      .inner
+        +slider('--1slide')
+          -for(let i=0; i<5; i++)
+            +gallery-card.img-16-9.swiper-slide

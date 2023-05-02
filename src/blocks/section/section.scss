@@ -24,5 +24,17 @@
     &--text-start {
       text-align: start;
     }
+    &--mb-xs {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+        @include media-tablet {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  &__img {
+    display: flex;
+    justify-content: center;
   }
 }

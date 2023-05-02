@@ -1,6 +1,6 @@
-mixin ui-p1(text, mods)
+mixin gallery-card(mods)
   -
-    const baseName = 'ui-p1'
+    const baseName = 'gallery-card'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,6 @@ mixin ui-p1(text, mods)
       allMods = allMods.trim()
     }
 
-  .ui-p1(class=allMods)&attributes(attributes) !{text}
+  a.gallery-card(class=allMods data-fancybox='photo-gallery' href='../../images/gallery-1.jpg')&attributes(attributes)
+    img(src='../../images/gallery-1.jpg', alt="")
     block

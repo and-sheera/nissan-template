@@ -22,6 +22,13 @@ mixin main-ban(mods)
               .main-ban__text-bg
                 .main-ban__descr.main-ban__descr--fw300 Обещания NISSAN
                 h2.main-ban__title.main-ban__title--fw300 Мы ОБЕЩАЕМ ЗАБОТИТЬСЯ О ВАС. ВСЕГДА.
+      else if pageName === 'nissan-services'
+        .main-ban__item.main-ban__item--text-up.swiper-slide
+          .main-ban__img: img(src='../../images/nissan-services.jpg' alt='')
+          .main-ban__text
+            .inner.main-ban__inner
+              h2.main-ban__title Сервис - ТОЧНАЯ НАУКА
+              .main-ban__descr Выберите подходящее для вас сервисное предложение
       else
         .main-ban__item.swiper-slide
           .main-ban__img: img(src='../../images/main-banner_2.jpg' alt='')

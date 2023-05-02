@@ -1,0 +1,65 @@
+mixin contact(mods)
+  -
+    const baseName = 'contact'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contact(class=allMods)&attributes(attributes)
+    .contact__text ИНН 3662140164
+    .contact__about
+      .contact__img: img(src='../../images/contact.jpg' alt='')
+      .contact__info
+        a.contact__info-item(href='tel:+74732112290')
+          +svg('icon_tel')
+          span +7 (473) 211-22-90
+        a.contact__info-item(href='mailto:Nissan@motorlandgroup.ru')
+          +svg('icon_mail')
+          span Nissan@motorlandgroup.ru
+        .contact__info-item
+          +svg('icon_clock')
+          span пн - вс: с 08:00 по 20:00
+        a.contact__info-item(href='https://maps.yandex.ru/?text=51.66182983370911,39.30038244833504' target='_blank')
+          +svg('icon_map')
+          span 394002, Воронеж, Изыскателей, 23/3
+        +ui-button('Построить маршрут', '--text')(href='#')
+    .contact__wrapper
+      .contact__item
+        .contact__name Отдел сервиса
+        .contact__info
+          .contact__info-item
+            +svg('icon_clock')
+            span пн - вс: с 08:00 по 20:00
+          a.contact__info-item(href='tel:89192334131')
+            +svg('icon_tel')
+            span 89192334131
+          a.contact__info-item(href='mailto:Nissan@motorlandgroup.ru')
+            +svg('icon_mail')
+            span Nissan@motorlandgroup.ru
+      .contact__item
+        .contact__name Отдел продаж новых автомобилей
+        .contact__info
+          .contact__info-item
+            +svg('icon_clock')
+            span пн - вс: с 08:00 по 20:00
+          a.contact__info-item(href='mailto:Nissan@motorlandgroup.ru')
+            +svg('icon_mail')
+            span Nissan@motorlandgroup.ru
+      .contact__item
+        .contact__name Клиентская служба
+        .contact__info
+          .contact__info-item
+            +svg('icon_clock')
+            span пн - пт: с 09:00 по 18:00; сб - вс: выходной
+          a.contact__info-item(href='tel:+74732112290')
+            +svg('icon_tel')
+            span + 74732112290 доб. 1703
+          a.contact__info-item(href='mailto:Nissan@motorlandgroup.ru')
+            +svg('icon_mail')
+            span Nissan@motorlandgroup.ru
+    block

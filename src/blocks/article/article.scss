@@ -1,0 +1,46 @@
+.article {
+  &__head {
+    margin-bottom: 60px;
+    text-align: center;
+    @include media-tablet {
+      margin-bottom: 40px;
+    }
+  }
+  &__cover {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+    }
+  }
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    p,
+    ul {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+    h2,
+    h3 {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
+    }
+    h2 {
+      @extend .ui-h2;
+    }
+    h3 {
+      @extend .ui-h3;
+    }
+    ul {
+      @extend .ui-ul;
+    }
+    a {
+      color: $red;
+    }
+  }
+}

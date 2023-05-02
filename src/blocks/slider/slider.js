@@ -18,11 +18,16 @@ export default function slider() {
       breakpoints: {
         768: {
           spaceBetween: 25,
-          slidesPerView: 2
+          slidesPerView: sliderElement.classList.contains('slider--1slide') ? 1 : 2
         },
         1201: {
           spaceBetween: 25,
-          slidesPerView: sliderElement.classList.contains('slider--3slides') ? 3 : 4
+          slidesPerView: (() => {
+            if (sliderElement.classList.contains('slider--1slide')) {
+              return 1
+            }
+            return sliderElement.classList.contains('slider--3slides') ? 3 : 4
+          })()
         }
       }
     })

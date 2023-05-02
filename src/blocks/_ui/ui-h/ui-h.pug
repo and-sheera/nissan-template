@@ -57,33 +57,3 @@ mixin ui-h4(title, mods)
 
   h4.ui-h4(class=allMods)&attributes(attributes) !{title}
     block
-
-mixin ui-h5(title, mods)
-  -
-    const baseName = 'ui-h5'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
-
-  h5.ui-h5(class=allMods)&attributes(attributes) !{title}
-    block
-
-mixin ui-h6(title, mods)
-  -
-    const baseName = 'ui-h6'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
-
-  h6.ui-h6(class=allMods)&attributes(attributes) !{title}
-    block

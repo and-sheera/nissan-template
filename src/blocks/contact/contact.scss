@@ -1,0 +1,64 @@
+.contact {
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 24px;
+  }
+  &__about {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 25px;
+    @include media-laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-tablet {
+      grid-template-columns: unset;
+    }
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+    @include media-laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-tablet {
+      grid-template-columns: unset;
+    }
+  }
+  &__info {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 300;
+      font-size: 16px;
+      .svg {
+        width: 15px;
+        height: 15px;
+        color: $red;
+        flex-shrink: 0;
+      }
+    }
+    .ui-button {
+      margin-top: 30px;
+    }
+  }
+  &__item {
+    padding: 20px;
+    border: 1px solid #bbb;
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 15px;
+    @include media-tablet {
+      font-size: 18px;
+    }
+  }
+}

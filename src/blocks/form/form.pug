@@ -1,4 +1,4 @@
-mixin form(mods)
+mixin form(type, mods)
   -
     const baseName = 'form'
     let allMods = ''
@@ -11,35 +11,67 @@ mixin form(mods)
     }
 
   form.form(class=allMods)&attributes(attributes)
-    .form__section
-      +ui-p1('Причина обращения и автомобиль', '--light')
-      +ui-select('', 'Ремонт', 'Техническое обслуживание', 'Кузовной ремонт', 'Другое')(placeholder='Причина обращения')
-    .form__section
-      +ui-p1('Дата и время визита', '--light')
-      +ui-datepicker('Выберите дату', '--single')(data-min-date='today')
-      +ui-input('time', 'Введите время', '--time')(data-mask='time')
-    .form__section
-      +ui-p1('Личные данные', '--light')
-      +ui-input('name', 'Имя *')(required)
-    .form__section
-      +ui-p1('Контактная информация', '--light')
-      .form__tel
-        +ui-select()(data-tel-code)
-          option(value='+7' data-short='Ru' selected) Russian Federation (Российская Федерация)
-          option(value='+375' data-short='By') Belarus (Беларусь)
-          option(value='+372' data-short='Ee') Estionia (Eesti)
-          option(value='+7' data-short='Kz') Kazakhstan (Казахстан)
-          option(value='+371' data-short='Lv') Latvia (Latvija)
-          option(value='+370' data-short='Lt') Lithuania (Lietuva)
-        +ui-input('tel', 'Телефон *')(required data-parsley-length="[16, 16]" data-parsley-error-message='Это поле обязательно для заполнения')
-    .form__section
-      +ui-checkbox('consent', '')(required data-parsley-error-message='Это поле обязательно для заполнения')
-        a(href='#') Согласен с обработкой моих персональных данных и на коммуникацию
-        |  *
-      +ui-checkbox('consent-communication', 'Отправляя заявку, вы даете согласие на')(required data-parsley-error-message='Это поле обязательно для заполнения')
-        =' '
-        a(href='#') коммуникацию
-        |  *
-    .form__submit
-      +ui-button('Отправить', 'form')(type='submit')
+    if type === 'message'
+      .form__section
+        +ui-p1('Личные данные', '--light')
+        +ui-input('name', 'Имя *')(required)
+        +ui-input('surname', 'Фамилия *')(required)
+      .form__section
+        +ui-p1('Контактная информация', '--light')
+        .form__tel
+          +ui-select()(data-tel-code)
+            option(value='+7' data-short='Ru' selected) Russian Federation (Российская Федерация)
+            option(value='+375' data-short='By') Belarus (Беларусь)
+            option(value='+372' data-short='Ee') Estionia (Eesti)
+            option(value='+7' data-short='Kz') Kazakhstan (Казахстан)
+            option(value='+371' data-short='Lv') Latvia (Latvija)
+            option(value='+370' data-short='Lt') Lithuania (Lietuva)
+          +ui-input('tel', 'Телефон *')(required data-parsley-length="[16, 16]" data-parsley-error-message='Это поле обязательно для заполнения')
+        +ui-input('mail', 'Email', '', 'mail')
+      .form__section
+        +ui-p1('Ваше обращение', '--light')
+        +ui-select('', 'Ремонт', 'Техническое обслуживание', 'Кузовной ремонт', 'Другое')(placeholder='Тема обращения')
+        +ui-textarea('message', 'Текст обращения')(rows='4')
+      .form__section
+        +ui-checkbox('consent', '')(required data-parsley-error-message='Это поле обязательно для заполнения')
+          a(href='#') Согласен с обработкой моих персональных данных и на коммуникацию
+          |  *
+        +ui-checkbox('consent-communication', 'Отправляя заявку, вы даете согласие на')(required data-parsley-error-message='Это поле обязательно для заполнения')
+          =' '
+          a(href='#') коммуникацию
+          |  *
+      .form__submit
+        +ui-button('Отправить', 'form')(type='submit')
+    else
+      .form__section
+        +ui-p1('Причина обращения и автомобиль', '--light')
+        +ui-select('', 'Ремонт', 'Техническое обслуживание', 'Кузовной ремонт', 'Другое')(placeholder='Причина обращения')
+      .form__section
+        +ui-p1('Дата и время визита', '--light')
+        +ui-datepicker('Выберите дату', '--single')(data-min-date='today')
+        +ui-input('time', 'Введите время', '--time')(data-mask='time')
+      .form__section
+        +ui-p1('Личные данные', '--light')
+        +ui-input('name', 'Имя *')(required)
+      .form__section
+        +ui-p1('Контактная информация', '--light')
+        .form__tel
+          +ui-select()(data-tel-code)
+            option(value='+7' data-short='Ru' selected) Russian Federation (Российская Федерация)
+            option(value='+375' data-short='By') Belarus (Беларусь)
+            option(value='+372' data-short='Ee') Estionia (Eesti)
+            option(value='+7' data-short='Kz') Kazakhstan (Казахстан)
+            option(value='+371' data-short='Lv') Latvia (Latvija)
+            option(value='+370' data-short='Lt') Lithuania (Lietuva)
+          +ui-input('tel', 'Телефон *')(required data-parsley-length="[16, 16]" data-parsley-error-message='Это поле обязательно для заполнения')
+      .form__section
+        +ui-checkbox('consent', '')(required data-parsley-error-message='Это поле обязательно для заполнения')
+          a(href='#') Согласен с обработкой моих персональных данных и на коммуникацию
+          |  *
+        +ui-checkbox('consent-communication', 'Отправляя заявку, вы даете согласие на')(required data-parsley-error-message='Это поле обязательно для заполнения')
+          =' '
+          a(href='#') коммуникацию
+          |  *
+      .form__submit
+        +ui-button('Отправить', 'form')(type='submit')
     block

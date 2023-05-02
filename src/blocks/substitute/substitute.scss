@@ -1,0 +1,17 @@
+.substitute {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  @include media-tablet {
+    grid-template-columns: unset;
+  }
+  &__item {
+    text-align: center;
+  }
+  &__name {
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
+}
