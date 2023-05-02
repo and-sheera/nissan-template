@@ -24,6 +24,9 @@
     &--text-start {
       text-align: start;
     }
+    &--trans-none {
+      text-transform: none;
+    }
     &--mb-xs {
       &:not(:last-child) {
         margin-bottom: 20px;
