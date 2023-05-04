@@ -1,0 +1,25 @@
+.page-404 {
+  position: relative;
+  padding: 50px 100px;
+  @include media-laptop {
+    padding: 30px 0;
+  }
+  @include media-tablet {
+    padding: 20px 0;
+  }
+  &__num {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 64px;
+    color: $red;
+    @include media-tablet {
+      font-size: 40px;
+    }
+  }
+  &__ui-h3 {
+    text-transform: uppercase;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

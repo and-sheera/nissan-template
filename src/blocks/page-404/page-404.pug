@@ -1,0 +1,17 @@
+mixin page-404(mods)
+  -
+    const baseName = 'page-404'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .page-404(class=allMods)&attributes(attributes)
+    .page-404__num 404
+    +ui-h3('Адрес не найден', 'page-404, --bold')
+    +ui-p1('Приносим свои извинения, эта ссылка недействительна, но вы можете перейти к&nbsp;другим разделам сайта.', 'page-404')
+    block
