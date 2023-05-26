@@ -39,3 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
   popup()
   galleryCard()
 })
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.body.classList.remove('transition-disabled')
+  }, 300)
+})

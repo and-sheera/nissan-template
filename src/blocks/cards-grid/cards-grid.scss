@@ -2,4 +2,10 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
+  @include media-laptop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @include media-tablet {
+    grid-template-columns: 1fr;
+  }
 }
