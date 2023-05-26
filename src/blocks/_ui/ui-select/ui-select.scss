@@ -56,9 +56,6 @@
     font: inherit;
     color: inherit;
     transition: 0.2s;
-    @include media-tablet {
-      padding: 10px 14px;
-    }
     &::before {
       content: '';
       position: absolute;

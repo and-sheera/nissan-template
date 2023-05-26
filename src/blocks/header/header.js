@@ -32,12 +32,14 @@ export default function header() {
     const burgerButton = headerElement.querySelector('.header__burger-icon')
     const burgerElement = headerElement.querySelector('.header__burger')
     burgerButton.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden'
       burgerElement.classList.add('active')
       shadow.classList.add('active')
     })
 
     const burgerButtonClose = headerElement.querySelector('.header__burger-close')
     burgerButtonClose.addEventListener('click', () => {
+      document.body.style.overflow = ''
       burgerElement.classList.remove('active')
       shadow.classList.remove('active')
     })
